@@ -26,7 +26,7 @@ class UserController extends Controller
                 'phone' => 'required', 
             ]);
     
-            $user = User::create([
+            User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
