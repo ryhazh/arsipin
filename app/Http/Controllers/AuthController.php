@@ -34,4 +34,29 @@ class AuthController extends Controller
         return redirect()->route('loginpage');
     }
 
+    public function register(Request $request)
+    {
+        try {
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6', 
+                'phone' => 'required', 
+            ]);
+    
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'phone' => $request->phone,
+                'role' => DB::table('roles')->where('name', 'user')->first()->id,
+            ]);
+
+            return redirect()->route('loginpage')->with('success', 'Registration successful! Please login.');
+        } catch (\Throwable $e) {
+            return back()
+                ->withInput()
+                ->withErrors(['email' => $e->getMessage()]);
+        }
+    }
 }
