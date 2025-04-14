@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('records', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('book_id');
+            $table->integer('quantity');
             $table->unsignedBigInteger('user_id');
             $table->timestamp('borrowed_at');
+            $table->string('reason');
             $table->date('due_date');
             $table->timestamp('returned_at')->nullable();
+            $table->boolean('is_approved')->default(false);
             $table->timestamps();
         });
     }

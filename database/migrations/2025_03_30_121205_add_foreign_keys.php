@@ -18,7 +18,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->foreign('role')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('roles');
         });
 
         Schema::table('records', function (Blueprint $table) {
@@ -39,7 +39,7 @@ return new class extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['role']);
+            $table->dropForeign(['role_id']);
         });
 
         Schema::table('records', function (Blueprint $table) {
