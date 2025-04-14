@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/logo.svg" width="400" alt="Arsipin Logo"></p>
+
 
 # Arsipin - Sistem Informasi Perpustakaan
 
