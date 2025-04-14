@@ -63,7 +63,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Jalankan migrasi dan seed
+5. Jalankan migrasi dan seed (opsional, data yang digenerate adalah data dummy)
 ```bash
 php artisan migrate --seed
 ```
