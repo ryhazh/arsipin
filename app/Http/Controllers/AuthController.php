@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
@@ -51,7 +51,7 @@ class AuthController extends Controller
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
                 'phone' => $request->phone,
-                'role' => DB::table('roles')->where('name', 'user')->first()->id,
+                'role_id' => DB::table('roles')->where('name', 'user')->first()->id,  // Changed 'role' to 'role_id'
             ]);
 
             return redirect()->route('loginpage')->with('success', 'Registration successful! Please login.');
