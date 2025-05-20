@@ -45,7 +45,7 @@ Arsipin adalah sistem informasi perpustakaan yang dirancang untuk memudahkan pen
 
 1. Clone repositori ini
 ```bash
-git clone https://github.com/username/arsipin.git
+git clone https://github.com/ryhazh/arsipin.git
 ```
 
 2. Install dependensi
