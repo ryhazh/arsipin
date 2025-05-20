@@ -68,7 +68,12 @@ php artisan key:generate
 php artisan migrate --seed
 ```
 
-6. Jalankan aplikasi
+6. Jalankan storage:link untuk memungkinkan mengupload gambar
+```bash
+php artisan storage:link
+```
+
+7. Jalankan aplikasi
 ```bash
 php artisan serve
 ```
